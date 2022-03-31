@@ -59,7 +59,7 @@ for name in ary_name :
 i = 0
 
 #各保存ディレクトリごとのテキストファイルを開く
-f = open('S:\個人作業用\那須\ワールドジャパン\変更_' + dare + '.txt','w',encoding = 'UTF-8')
+f = open('S:\個人作業用\宇野\ワールドジャパン\変更_' + dare + '.txt','w',encoding = 'UTF-8')
 
 #変更リストにファイルリストを出力
 for ar in ary :
