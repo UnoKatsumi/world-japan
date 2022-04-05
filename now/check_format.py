@@ -89,8 +89,6 @@ rate = bar_size
 pro_bar =('=' * rate) + (' ' * (bar_size - rate))
 print('\r' + '[' + pro_bar + ']' + ' ' + str(round(j / int(len_files) * 100, 2)) + '%', end='')
 
-print('\n')
-
 ary = list(set(ary))
 
 #例外ファイルを要修正フォルダに移動させる
