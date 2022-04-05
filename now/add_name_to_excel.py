@@ -15,8 +15,8 @@ use_cols_e3 = [2, 3, 4]
 
 ##cehck_name.pyで出力したテキストファイルから名前補填が必用なファイルを読み出す
 #dare = '2フォーマット(柏葉さん)'
-dare = '佐藤さん'
-f = open('S:/個人作業用/那須/ワールドジャパン/変更_' + dare + '.txt','r', encoding = 'UTF-8')
+dare = '2フォーマット 2'
+f = open('S:/個人作業用/宇野/ワールドジャパン/変更_' + dare + '.txt','r', encoding = 'UTF-8')
 excel_list = f.readlines()
 f.close()
 

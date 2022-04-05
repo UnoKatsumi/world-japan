@@ -9,8 +9,8 @@ import openpyxl as excel
 pd.set_option('display.max_rows', None)
 
 #dareに学習用データの格納ディレクトリを入れることでどのディレクトリのデータの変更リストかわかりやすくなります
-dare = '2フォーマット(柏葉さん)'
-base_dir = 'S:/個人作業用/アルバイト/ワールドジャパン/学習用データ/' + dare + '/【A】'
+dare = '2フォーマット 2'
+base_dir = 'S:/個人作業用/宇野/ワールドジャパン/学習用データ(テスト用)/' + dare + '/【A】'
 
 #データフレームの読み込みに用いる列
 use_cols = [1,2,3]
