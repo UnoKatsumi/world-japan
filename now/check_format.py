@@ -5,16 +5,18 @@ import openpyxl as excel
 import shutil
 
 #学習用データの保存ディレクトリ
-base_dir = 'S:/個人作業用/アルバイト/ワールドジャパン/学習用データ/2フォーマット 2/【A】'
+base_dir = 'S:/個人作業用/宇野/ワールドジャパン/学習用データ(テスト用)/2フォーマット 2/【A】'
 
 #ディレクトリ内のファイルとその数を取得
 files = os.listdir(base_dir)
 len_files = str(len(files))
 
 #プログレスバーの表示に使用
-ary = []
 j = 0
 bar_size = 20
+
+#例外リスト用の配列
+ary = []
 
 #各ファイルをチェック
 for nam in files:
@@ -41,12 +43,10 @@ for nam in files:
     #ファイルを開く
     bk = excel.load_workbook(path)
 
-    val = 0
-    ary = []
-
     #ファイル内の各シートを読込み
     for sheet in bk :
         i = 1
+        val = 0
         if 'ボディ' in sheet.title :
             #項目数をカウント
             while val != '契約内容' :
@@ -55,6 +55,7 @@ for nam in files:
             #正しくない項目数の場合は例外ファイルリストに追加
             if i != 131 :
                 ary.append(path)
+                print(path)
         elif 'バスト' in sheet.title :
             #項目数をカウント
             while val != '契約内容' :
@@ -63,6 +64,7 @@ for nam in files:
             #正しくない項目数の場合は例外ファイルリストに追加
             if i != 95 :
                 ary.append(path)
+                print(path)
         elif 'フェイシャル' in sheet.title :
             #項目数をカウント
             while val != '契約内容' :
@@ -71,6 +73,7 @@ for nam in files:
             #正しくない項目数の場合は例外ファイルリストに追加
             if i != 73 :
                 ary.append(path)
+                print(path)
         elif '脱毛' in sheet.title :
             #項目数をカウント
             while val != '医師から注意を受けている事や体質的に気になる事' :
@@ -79,11 +82,14 @@ for nam in files:
             #正しくない項目数の場合は例外ファイルリストに追加
             if i != 62 :
                 ary.append(path)
+                print(path)
 
 #プログレスバーの表示
 rate = bar_size
 pro_bar =('=' * rate) + (' ' * (bar_size - rate))
 print('\r' + '[' + pro_bar + ']' + ' ' + str(round(j / int(len_files) * 100, 2)) + '%', end='')
+
+print('\n')
 
 ary = list(set(ary))
 
@@ -94,7 +100,7 @@ for one in ary :
 #例外ファイルリストをテキストファイルに出力
 f = open('例外.txt', 'w', encoding = 'UTF-8')
 for one in ary :
-    f.write(one[0] + ':' + one[1])
+    f.write(one)
     f.write('\n')
 f.close()
 
