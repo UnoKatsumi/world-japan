@@ -8,10 +8,10 @@ from openpyxl import utils
 
 #pd.set_option('display.max_rows', None)
 
-path = 'S:\個人作業用\那須\ワールドジャパン\有効データ_all.xlsx'
+path = 'S:\個人作業用\宇野\ワールドジャパン\有効データ_all.xlsx'
 sheet = 'Sheet1'
 
-conn = sqlite3.connect('S:/個人作業用/那須/ワールドジャパン/sqlite3/salon_A.db')
+conn = sqlite3.connect('S:/個人作業用/宇野/ワールドジャパン/sqlite3/salon_A.db')
 
 ############################   body   #############################
 #body_1のデータから各カラムに欠損値(nan)のない有効なデータを抽出
