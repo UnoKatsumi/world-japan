@@ -53,43 +53,43 @@ for nam in files:
         val = 0
         if 'ボディ' in sheet.title :
             #項目数をカウント
-            while val != '契約内容' and i < 1000 :
+            while val != '契約内容' and i < 10000 :
                 val = sheet.cell(row = i, column = 2).value
                 i = i + 1
             #正しくない項目数の場合は例外ファイルリストに追加
             if i != 131 :
                 ary.append(path)
-                print(path)
+                print('\n' + path + '\n' + str(sheet.title) + str(i))
                 break
         elif 'バスト' in sheet.title :
             #項目数をカウント
-            while val != '契約内容' and i < 1000 :
+            while val != '契約内容' and i < 10000 :
                 val = sheet.cell(row = i, column = 2).value
                 i = i + 1
             #正しくない項目数の場合は例外ファイルリストに追加
             if i != 95 :
                 ary.append(path)
-                print(path)
+                print('\n' + path + '\n' + str(sheet.title) + str(i))
                 break
         elif 'フェイシャル' in sheet.title :
             #項目数をカウント
-            while val != '契約内容' and i < 1000 :
+            while val != '契約内容' and i < 10000 :
                 val = sheet.cell(row = i, column = 2).value
                 i = i + 1
             #正しくない項目数の場合は例外ファイルリストに追加
-            if i != 73 :
+            if i != 72 :
                 ary.append(path)
-                print(path)
+                print('\n' + path + '\n' + str(sheet.title) + str(i))
                 break
         elif '脱毛' in sheet.title :
             #項目数をカウント
-            while val != '医師から注意を受けている事や体質的に気になる事' and i < 1000 :
+            while val != '医師から注意を受けている事や体質的に気になる事' and i < 10000 :
                 val = sheet.cell(row = i, column = 2).value
                 i = i + 1
             #正しくない項目数の場合は例外ファイルリストに追加
             if i != 62 :
                 ary.append(path)
-                print(path)
+                print('\n' + path + '\n' + str(sheet.title) + str(i))
                 break
 
 #プログレスバーの表示
