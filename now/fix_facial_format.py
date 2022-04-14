@@ -6,7 +6,7 @@ import openpyxl as excel
 import shutil
 
 #学習用データの保存ディレクトリ
-dare = '2フォーマット(潮永さん）'
+dare = '2フォーマット(渡部さん)'
 base_dir = 'S:/個人作業用/宇野/ワールドジャパン/学習用データ(テスト用)/' + dare + '/【A】/【要修正】'
 
 #ディレクトリ内の全てを取得
@@ -67,41 +67,46 @@ for nam in files:
 
         bk = excel.load_workbook(path)
 
-        for sheet in bk :
-            i = 1
-            val = 0
-            if 'ボディ' in sheet.title :
-                #項目数をカウント
-                while val != '契約内容' and i < 10000 :
-                    val = sheet.cell(row = i, column = 2).value
-                    i = i + 1
-                #正しい項目数の場合は修正済み確認リストに追加
-                if i == 131 :
-                    ary.append(path)
-            elif 'バスト' in sheet.title :
-                #項目数をカウント
-                while val != '契約内容' and i < 10000 :
-                    val = sheet.cell(row = i, column = 2).value
-                    i = i + 1
-                #正しい項目数の場合は修正済み確認リストに追加
-                if i == 95 :
-                    ary.append(path)
-            elif 'フェイシャル' in sheet.title :
-                #項目数をカウント
-                while val != '契約内容' and i < 10000 :
-                    val = sheet.cell(row = i, column = 2).value
-                    i = i + 1
-                #正しい項目数の場合は修正済み確認リストに追加
-                if i == 72 :
-                    ary.append(path)
-            elif '脱毛' in sheet.title :
-                #項目数をカウント
-                while val != '医師から注意を受けている事や体質的に気になる事' and i < 10000 :
-                    val = sheet.cell(row = i, column = 2).value
-                    i = i + 1
-                #正しい項目数の場合は修正済み確認リストに追加
-                if i == 62 :
-                    ary.append(path)
+    k = 0
+
+    for sheet in bk :
+        i = 1
+        val = 0
+        if 'ボディ' in sheet.title :
+            #項目数をカウント
+            while val != '契約内容' and i < 10000 :
+                val = sheet.cell(row = i, column = 2).value
+                i = i + 1
+            #正しい項目数の場合は修正済み確認リストに追加
+            if i == 131 :
+                k += 1
+        elif 'バスト' in sheet.title :
+            #項目数をカウント
+            while val != '契約内容' and i < 10000 :
+                val = sheet.cell(row = i, column = 2).value
+                i = i + 1
+            #正しい項目数の場合は修正済み確認リストに追加
+            if i == 95 :
+                k += 1
+        elif 'フェイシャル' in sheet.title :
+            #項目数をカウント
+            while val != '契約内容' and i < 10000 :
+                val = sheet.cell(row = i, column = 2).value
+                i = i + 1
+            #正しい項目数の場合は修正済み確認リストに追加
+            if i == 72 :
+                k += 1
+        elif '脱毛' in sheet.title :
+            #項目数をカウント
+            while val != '医師から注意を受けている事や体質的に気になる事' and i < 10000 :
+                val = sheet.cell(row = i, column = 2).value
+                i = i + 1
+            #正しい項目数の場合は修正済み確認リストに追加
+            if i == 62 :
+                k += 1
+    #print('\n' + str(k))
+    if k == 4 :
+        ary.append(path)
 
 
 #プログレスバーの表示
@@ -115,6 +120,5 @@ ary = list(set(ary))
 for one in ary :
     shutil.move(one, one.replace('/【A】/【要修正】/', '/【A】/'))
 
-print(ary)
 print('\n合計数 : ' + str(len(ary)))
 print('Complete!',end = '')
