@@ -4,7 +4,7 @@ import pandas as pd
 import datetime
 from openpyxl import utils
 
-conn = sqlite3.connect('S:/個人作業用/那須/ワールドジャパン/sqlite3/salon_A.db')
+conn = sqlite3.connect('S:/個人作業用/渡邊/ワールドジャパン/sqlite3/salon_A.db')
 c = conn.cursor()
 
 ############################   body   ############################

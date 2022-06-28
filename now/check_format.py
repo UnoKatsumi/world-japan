@@ -5,8 +5,8 @@ import openpyxl as excel
 import shutil
 
 #学習用データの保存ディレクトリ
-dare = '2フォーマット(渡部さん)'
-base_dir = 'S:/個人作業用/宇野/ワールドジャパン/学習用データ(テスト用)/' + dare + '/【A】'
+dare = '重複なしデータ'
+base_dir = 'S:/個人作業用/渡邊/ワールドジャパン/' + dare + '/【A】'
 
 #ディレクトリ内の全てを取得
 files_dirs = os.listdir(base_dir)
